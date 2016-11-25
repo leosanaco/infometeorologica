@@ -1,0 +1,408 @@
+/* Empty. Add your own CSS if you like */
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+@media (min-width: 320px) and (max-width: 639px) {
+  	html {
+	  font-size: 75%; /* 1rem = 12px*/
+	}
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  	html {
+	  font-size: 100%; /* 1rem = 16px*/
+	}
+}
+
+body{
+	font-size: 1.3rem;
+}
+
+h1{
+  font-size:1.6em;
+}
+
+.item-toggle{
+  padding-right: 80px !important;
+}
+
+.ultima-actualizacion{
+    color: white;
+  background-color: #F77A01;
+  text-align: center;
+  box-shadow: 0px 10px 10px rgba(200, 104, 11, 0.29) inset;
+  padding: 2px;
+  font-weight: inherit;
+  font-style: italic;
+  font-size: 0.8em;
+  text-shadow: 0 0 5px rgba(58, 18, 1, 0.88);
+}
+
+#mediciones li{
+	display:block;
+	padding: 10px;
+	padding-top: 20px;
+	position: relative;
+}
+
+#mediciones .bar{
+	position:absolute;
+}
+
+#mediciones .icon{
+	color: rgba(255,255,255,.3);
+	font-size: 3rem;
+	padding-right:5px;
+	position:relative;
+}
+
+#mediciones .icon:before{
+	width: 1em;
+	text-align: center;
+	position: relative;
+}
+#mediciones .label{
+	position: relative;
+  	top: -10px;
+	vertical-align: bottom;
+	font-size: 2rem;
+	color: rgba(255, 255, 255, 0.9);
+	text-shadow: 0px 1px 7px rgba(0, 0, 0, 0.4);
+}
+
+#mediciones .value{
+	color: white;
+	font-size: 3rem;
+	vertical-align: middle;
+	float: right;
+	text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+	position: relative;
+}
+
+.estaciones > div{
+  text-align: center;
+}
+
+/* Wind direction */
+/* 90deg*/
+.icon-direction-N:before{
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); 
+    transform: rotate(0deg);
+}
+.icon-direction-E:before{
+   -ms-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg); 
+    transform: rotate(90deg);
+}
+
+.icon-direction-S:before{
+  -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
+}
+
+.icon-direction-O:before{
+  -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg); 
+    transform: rotate(270deg);
+}
+
+/* 45deg*/
+.icon-direction-NE:before{
+  -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg); 
+    transform: rotate(45deg);
+}
+.icon-direction-SE:before{
+  -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg); 
+    transform: rotate(135deg);
+}
+.icon-direction-SO:before{
+  -ms-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg); 
+    transform: rotate(225deg);
+}
+.icon-direction-NO:before{
+  -ms-transform: rotate(315deg);
+    -webkit-transform: rotate(315deg); 
+    transform: rotate(315deg);
+}
+
+/* 22.5deg*/
+.icon-direction-NNE:before{
+  -ms-transform: rotate(22.5deg);
+    -webkit-transform: rotate(22.5deg); 
+    transform: rotate(22.5deg);
+}
+.icon-direction-SSE:before{
+  -ms-transform: rotate(157.5deg);
+    -webkit-transform: rotate(157.5deg); 
+    transform: rotate(157.5deg);
+}
+.icon-direction-SSW:before{
+  -ms-transform: rotate(202.5deg);
+    -webkit-transform: rotate(202.5deg); 
+    transform: rotate(202.5deg);
+}
+.icon-direction-NNW:before{
+  -ms-transform: rotate(337.5deg);
+    -webkit-transform: rotate(337.5deg); 
+    transform: rotate(337.5deg);
+}
+
+/* 67.5deg*/
+.icon-direction-ENE:before{
+  -ms-transform: rotate(67.5deg);
+    -webkit-transform: rotate(67.5deg); 
+    transform: rotate(67.5deg);
+}
+.icon-direction-ESE:before{
+  -ms-transform: rotate(112.5deg);
+    -webkit-transform: rotate(112.5deg); 
+    transform: rotate(112.5deg);
+}
+.icon-direction-OSW:before{
+  -ms-transform: rotate(247.5deg);
+    -webkit-transform: rotate(247.5deg); 
+    transform: rotate(247.5deg);
+}
+.icon-direction-ONW:before{
+  -ms-transform: rotate(292.5deg);
+    -webkit-transform: rotate(292.5deg); 
+    transform: rotate(292.5deg);
+}
+
+
+#temperature{
+	background-color: #C0392B;
+}
+
+#sensation{
+	background-color: #035287;
+}
+
+#humidity{
+	background-color: #27AE60;
+}
+
+#bar{
+	background-color: #F1C40F;
+}
+
+#wind{
+	background-color: #3498DB;
+}
+
+#wind-dir{
+	background-color:#9B59B6
+}
+#uv{
+	background-color: #927500;
+}
+
+#mediciones .shadow{
+	position: absolute;
+	z-index: 0;
+	background: linear-gradient(60deg, rgba(0,0,0,0.2) 55%, transparent 80%);
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	min-width: 5rem;
+	top: 0;
+}
+/*
+#temperature .shadow{
+  background: rgb(186, 43, 28);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 10%;
+ }
+
+ #humidity .shadow{
+  background: rgb(28, 163, 85);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+ }
+
+  #bar .shadow{
+  background: rgb(232, 188, 8);
+  bottom: 0;
+  left: 0;
+  right:0;
+  height: 40%;
+ }
+
+ #wind .shadow{
+  background: linear-gradient(45deg, rgb(18, 131, 207) 50%, transparent 50%);
+  bottom: 0;
+  left: 0;
+  right:0;
+  top: 0;
+ }
+
+#uv .shadow{
+ background: -webkit-radial-gradient(0, ellipse, #8C7102 50%,#927500 50%);
+   bottom: 0;
+  left: 0;
+  right:0;
+  top: 0;
+ }
+ */
+
+ /**/
+
+ .reproductor button{
+ 	padding-right: 10px;
+ 	padding-left: 10px;
+ }
+ #photos li{
+ 	display:none;
+  /*position: absolute;
+  top: 0;
+  left:0;*/
+ }
+
+#photos.radares li{
+  display:none;
+  position: absolute;
+  top: 0;
+  left:0;
+ }
+
+ #photos.fotos li img{
+ 	display:block;
+  max-height: 400px;
+ }
+
+ #photos li.show{
+ 	display:inline-block;
+ }
+
+ .photo-area .time{
+   position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  color: white;
+  font-size: 1.5em;
+  background-color: rgba(0, 0, 0, 0.45);
+  text-align: left;
+  width: 100%;
+  z-index: 1000;
+  min-height: 40px;
+ }
+
+ .photo-area{
+ 	position: relative;
+ 	text-align: center;
+  min-height: 50px;
+ }
+
+ .photo-area .reproductor{
+ 	position:absolute;
+ 	top:5px;
+ 	width: 100%;
+ 	text-align: center;
+  z-index: 2000;
+ }
+
+ .radares{
+    background-image:url(../img/mapa.png);
+ }
+
+ .grafico{
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 10px -10px -10px;
+
+  transition: max-height 1s opacity 1s;
+  background-color: white;
+  padding: 5px 10px 0;
+  position:relative;
+  z-index:2;
+ }
+
+  .grafico chart-legend{
+    display: none;
+  }
+
+ .grafico.activo{
+    opacity: 1;
+    display: block;
+    height: auto;
+      overflow: visible;
+ }
+
+ #mediciones .grafico li {
+  float: left;
+  width: 25%;
+}
+
+#mediciones .grafico ul{
+  overflow: hidden;
+}
+
+#mediciones .grafico ul:after{
+  content:"";
+  clear: both;
+}
+
+.status img{
+  width:100%;
+  max-width: 150px;
+}
+
+.status span{
+  font-size: 0.9em;
+  color:#666;
+  text-transform: capitalize;
+  display:block;
+}
+
+.ahora{
+  margin-bottom:10px;
+}
+
+.ahora .status span{
+  font-size:1.2em;
+ } 
+
+.prono h2{
+  font-size:1.2em;
+  padding: 5px 10px;
+  background-color: #EEE;
+}
+
+.pronos{
+  min-width:640px
+}
+
+.prono{
+  text-align: center;
+}
+
+.prono .temp{
+  color: #7DBA79;
+  font-weight: bold;
+}
+
+.prono .rain{
+    color: #3CCEFF;
+    font-weight: bold;
+    display: block;
+    font-size: 0.9em;
+}
+.prono .hour{
+  font-size:1.1em;
+}
+
+.today .prono{
+  max-width: 20%;
+}

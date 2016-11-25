@@ -1,0 +1,7 @@
+
+	<ul id="photos" class="fotos" ng-if="picturesSize.value > 0">
+	<li ng-repeat="picture in pictures.value" ng-class="{show: picture.show}">
+		<img src="{{imagesUrl}}/img/{{picture.img}}"/>
+		<div class="time" ng-if="verHora">{{picture.time}}</div>
+	</li>
+	</ul>

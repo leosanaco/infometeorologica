@@ -1,0 +1,33 @@
+<ion-view view-title="{{title}}">
+  <ion-content>
+    <div ng-if="!mobile || !wifi || wifiNetwork">
+      <div class="photo-area">
+
+        <div class="time" ng-if="verHora">
+          <span ng-repeat="picture in pictures.value" ng-class="{hide: !picture.show}">
+            <span>{{picture.time}}<span/>
+          </span>
+        </div>
+       
+        <div ui-view="fotos"></div>
+       
+        <div class="reproductor" ng-if="verControles">
+          <button class="button button-small icon ion-skip-backward" ng-click="first()"></button>
+          <button ng-show="!playing" class="button button-small icon ion-play"  ng-click="play()"></button>
+          <button ng-show="playing" class="button button-small icon ion-pause"  ng-click="pause()"></button>
+          <button class="button button-small icon ion-skip-forward" ng-click="last()"></button>
+        </div>
+     </div>
+       <div class="item range range-positive" ng-if="verDesplazadora">
+        <i class="icon ion-chevron-left" on-hold="prev()" ng-click="prev()"></i>
+        <input type="range" name="volume" min="0" max="{{picturesSize.value-1}}" ng-model="index.value" ng-change="changePhoto(this)"/>
+        <i class="icon ion-chevron-right" ng-click="next()"></i>
+      </div>
+    </div>
+    <div class="padding" ng-if="mobile && wifi && !wifiNetwork">
+      No se encontró conexión WIFI disponible.<br><br>
+      Para evitar alto consumo de datos, esta función está deshabilitada para redes de datos móviles. <br><br>
+      Puede cambiar esta opción desde las configuraciones.
+    </div>
+  </ion-content>
+</ion-view>

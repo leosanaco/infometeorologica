@@ -1,0 +1,169 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-ios-settings-strong" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-ios-information" menu-toggle="right">
+        </button>
+      </ion-nav-buttons>
+
+    </ion-nav-bar>
+    <ion-tabs class="tabs-icon-top tabs-color-active tabs-dark">
+
+    <!-- Mediciones -->
+    <ion-tab title="Mediciones" icon-off="ion-stats-bars" icon-on="ion-stats-bars" href="#/info/mediciones">
+      <ion-nav-view name="mediciones"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Pronostico -->
+    <ion-tab title="Pronóstico" icon-off="ion-android-sunny" icon-on="ion-android-sunny" href="#/info/pronostico">
+      <ion-nav-view name="pronostico"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Capturas -->
+    <ion-tab title="Fotos" icon-off="ion-images" icon-on="ion-images" href="#/info/capturas/fotos">
+      <ion-nav-view name="capturas"></ion-nav-view>
+    </ion-tab>
+
+     <!-- Radares -->
+    <ion-tab title="Radar" icon-off="ion-android-compass" icon-on="ion-android-compass" href="#/info/capturas/radares">
+      <ion-nav-view name="capturas"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Estaciones -->
+    <ion-tab title="Estaciones" icon-off="ion-android-pin" icon-on="ion-android-pin" href="#/info/estaciones">
+      <ion-nav-view name="estaciones"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Información 
+    <ion-tab title="Información" icon-off="ion-flag" icon-on="ion-flag" href="#/info/informacion">
+      <ion-nav-view name="informacion"></ion-nav-view>
+    </ion-tab>-->
+
+
+  </ion-tabs>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-dark">
+      <h1 class="title">Configuración</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+      <div class="item item-divider">
+        Mediciones
+      </div>
+        <div class="item item-toggle">
+         Ver última actualización
+         <label class="toggle toggle-positive">
+           <input type="checkbox" ng-model="actualizacion" ng-change="update('actualizacion',this)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      
+      <div class="item item-divider">
+        Capturas
+      </div>
+      <!--
+      <div class="item item-toggle">
+         Cargar sólo con WIFI
+         <label class="toggle toggle-positive">
+           <input type="checkbox" ng-model="wifi" ng-change="update('wifi',this)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>-->
+       <div class="item item-toggle">
+         Ver barra de controles
+         <label class="toggle toggle-positive">
+           <input type="checkbox" ng-model="verControles" ng-change="update('verControles',this)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-toggle">
+         Ver hora de captura
+         <label class="toggle toggle-positive">
+           <input type="checkbox" ng-model="verHora" ng-change="update('verHora',this)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+       <div class="item item-toggle">
+         Ver barra desplazadora
+         <label class="toggle toggle-positive">
+           <input type="checkbox"  ng-model="verDesplazadora" ng-change="update('verDesplazadora',this)">
+           <div class="track">
+             <div class="handle"></div>
+           </div>
+         </label>
+      </div>
+      <div class="item item-divider" ng-if="verControles">
+        Velocidad de reproducción
+      </div>
+      <div class="item range range-positive" ng-if="verControles">
+        Lenta
+        <input type="range" name="volume" min="0" max="4" ng-model="velocidad" ng-change="update('velocidad',this)">
+        Rápida
+      </div>
+      <div class="item item-divider" ng-if="verControles">
+        Frecuencia de capturas
+      </div>
+      <div class="item range range-positive">
+        Frecuente
+        <input type="range" name="volume" min="1" max="6" ng-model="frecuencia" ng-change="update('frecuencia',this)">
+        Dispersa
+      </div>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+<ion-side-menu side="right">
+    <ion-header-bar class="bar-dark">
+      <h1 class="title">Información</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div class="card">
+      <div class="item item-text-wrap">
+        <h1>Estación Meteorológica</h1>
+        <p>
+      El emplazamiento de la estación meteorológica automática experimental en la Facultad de Informática tiene por objetivo central obtener la información necesaria para medir el rendimiento de la instalación fotovoltáica piloto -paneles solares- que se encuentran en la azotea de la Facultad.
+      </p>
+    </div>
+    <div class="item item-image">
+        <img src="img/estacion.jpg">
+     </div>
+    <div class="item item-text-wrap">
+      <p>
+      La estación está localizada a 20 metros del suelo y muestra, además, parámetros meteorológicos que pueden ser usados para otros fines, siempre y cuando se tengan en cuenta las características de la instalación.
+      <br><br>
+      Esta estación meteorológica automática fue construída por la empresa Davis Instruments Corporation y corresponde al modelo Vantage Pro2 Plus. Es inalámbrica y cuenta con sensores de medición de temperatura, humedad, presión barométrica, lluvia, viento, radiación solar y ultavioleta (UV).
+      <br><br>
+      Finalmente, cabe mencionar que los datos que se visualizan en la web son actualizados cada 5 minutos.
+      </p>
+    </div>
+    
+    </div>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>

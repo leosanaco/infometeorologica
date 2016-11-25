@@ -1,0 +1,17 @@
+{
+  "name": "Info Meteorológica",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/tiempo",
+      "proxyUrl": "http://camara.clima.info.unlp.edu.ar"
+    },{
+ 		"path": "/mapa",
+      "proxyUrl": "http://mapa.clima.info.unlp.edu.ar"
+
+    },{
+    "path": "/radar",
+      "proxyUrl": "http://radar.inta.gov.ar"
+
+    }]
+}

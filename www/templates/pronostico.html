@@ -1,0 +1,65 @@
+<ion-view view-title="Pronostico">
+  <ion-content>
+     <div class="prono">
+
+      <div class="ahora">
+        <h2>Ahora</h2>
+        <div class="status" ng-if="ahora">
+          <img src="img/iconos/{{ahora.pro.weather[0].icon}}.png"/>
+          <span>{{ahora.pro.weather[0].description}}</span>
+          <span class="rain" ng-if="ahora.pro.rain &&  ahora.pro.rain['3h']>0">{{ahora.pro.rain['3h']}}mm</span> 
+          <span class="temp">{{ahora.pro.main.temp | number:0}}º</span>
+        </div>
+        <ion-spinner ng-if="!ahora" color="white" class="spinner spinner-android"></ion-spinner>
+      </div>
+
+      <ul id="pronostico">
+
+        <li>
+         <div class="day today" ng-if="pronostico.today.length > 0">
+            <h2>Hoy</h2>
+
+            <ion-scroll zooming="true" direction="x">
+            <div class="pronos row">
+              <div ng-repeat="prono in pronostico.today" class="prono col">
+                <span class="hour">{{prono.hour}}hs</span>
+                <div class="status">
+                  <img src="img/iconos/{{prono.pro.weather[0].icon}}.png"/>
+                  <span>{{prono.pro.weather[0].description}}</span>
+                </div>
+                <span class="rain" ng-if="prono.pro.rain &&  prono.pro.rain['3h']>0">{{prono.pro.rain['3h']}}mm</span> 
+                <span class="temp">{{prono.pro.main.temp | number:0}}º</span>
+
+                
+              </div>
+            </div>
+          </li>
+
+        <li ng-repeat="day in pronostico.days">
+          <div class="day">
+            <h2>{{day.date}}</h2>
+
+            <ion-scroll zooming="true" direction="x">
+            <div class="pronos row">
+              <div ng-repeat="prono in day.pronos" class="prono col">
+                <span class="hour">{{prono.hour}}hs</span>
+                <div class="status">
+                  <img src="img/iconos/{{prono.pro.weather[0].icon}}.png"/>
+                  <span>{{prono.pro.weather[0].description}}</span>
+                </div>
+                <span class="rain" ng-if="prono.pro.rain &&  prono.pro.rain['3h']>0">{{prono.pro.rain['3h']}}mm</span> 
+                <span class="temp">{{prono.pro.main.temp | number:0}}º</span>
+
+                
+              </div>
+            </div>
+           </ion-scroll>
+
+            
+          </div>
+        </li>
+      </ul>
+        
+    </div>
+  </ion-content>
+</ion-view>
