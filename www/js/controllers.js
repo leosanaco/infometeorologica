@@ -399,7 +399,12 @@ angular.module('starter.controllers', [])
       currentDay = moment.unix(current.dt).format("DD");
 
       if(currentDay == todayDay){
-        prono.today.push(current);
+
+        prono.today.push({
+            'pro':current,
+            'hour':moment.unix(current.dt).format("HH")
+          });
+
       } else {
 
         if(!day){
