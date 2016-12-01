@@ -278,10 +278,11 @@ h1{
  #photos.fotos li img{
  	display:block;
   max-height: 400px;
+  width:100%;
  }
 
  #photos li.show{
- 	display:inline-block;
+ 	display:block;
  }
 
  .photo-area .time{

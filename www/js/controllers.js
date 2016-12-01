@@ -195,7 +195,7 @@ angular.module('starter.controllers', [])
   $scope.hasPrev = false;
   $scope.pictures = {value:[]};
   $scope.picturesSize = {value:0};
-  $scope.index = {value:0};
+  $scope.index = {value:null};
 
   $scope.playing = false;
 
@@ -267,14 +267,24 @@ angular.module('starter.controllers', [])
 
   $scope.imagesUrl = ConfigConstants.cameraUrl;
   $scope.title = "Fotos";
+  
     Pictures.all().then(function(pics){
+
+        for(i=0; i<pics.length; i++) {
+           pics[i].show =false;
+        }
+
         $scope.pictures.value = pics;
         $scope.picturesSize.value = pics.length;
         $scope.hasNext = Pictures.hasNext();
         $scope.hasPrev = Pictures.hasPrev();
+
         $scope.index.value = pics.length-1;
-        $scope.pictures.value[$scope.index.value].show = true;
+        pics[$scope.index.value].show = true;
+        
+        
     });
+  
 })
 
 .controller('RadaresCtrl', function($scope, $interval, $ionicScrollDelegate, Pictures,ConfigConstants) {
@@ -287,11 +297,18 @@ angular.module('starter.controllers', [])
   var frecuency = $scope.frecuencia;
 
   var processPictures =function(pics){
+
+      for(i=0; i<pics.length; i++) {
+        pics[i].show =false;
+      }
+      
       $scope.pictures.value = pics;
       $scope.picturesSize.value = pics.length;
       $scope.hasNext = Pictures.hasNext();
       $scope.hasPrev = Pictures.hasPrev();
+
       $scope.index.value = pics.length-1;
+      pics[$scope.index.value].show = true;
   }
 
   setTimeout(function() {
