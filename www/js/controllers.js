@@ -352,6 +352,8 @@ angular.module('starter.controllers', [])
 
 .controller('PronosticoCtrl', function($scope,ConfigConstants, Pronostico) {
 
+  $scope.calculateWeather = function(){
+
   Pronostico.now().then(function(resp){
     $scope.ahora = {
           'pro':resp,
@@ -437,5 +439,16 @@ angular.module('starter.controllers', [])
     $scope.pronostico = prono;
 
   });
+
+  }
+
+  $scope.calculateWeather();
+
+  $scope.doRefresh = function() {
+    $scope.ahora = null;
+    $scope.pronostico = null;
+    $scope.calculateWeather();
+    $scope.$broadcast('scroll.refreshComplete');
+  };
 
 });

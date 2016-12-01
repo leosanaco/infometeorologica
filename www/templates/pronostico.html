@@ -1,5 +1,11 @@
 <ion-view view-title="Pronostico">
   <ion-content>
+
+    <ion-refresher
+    pulling-text="Tire para refrescar..."
+    on-refresh="doRefresh()">
+    </ion-refresher>
+
      <div class="prono">
 
       <div class="ahora">
@@ -10,14 +16,15 @@
           <span class="rain" ng-if="ahora.pro.rain &&  ahora.pro.rain['3h']>0">{{ahora.pro.rain['3h']}}mm</span> 
           <span class="temp">{{ahora.pro.main.temp | number:0}}º</span>
         </div>
-        <ion-spinner ng-if="!ahora" color="white" class="spinner spinner-android"></ion-spinner>
+        <ion-spinner ng-if="!ahora" class="spinner spinner-android"></ion-spinner>
       </div>
 
       <ul id="pronostico">
-
         <li>
-         <div class="day today" ng-if="pronostico.today.length > 0">
+         <div class="day today">
             <h2>Hoy</h2>
+
+            <ion-spinner ng-if="!pronostico" class="spinner spinner-android"></ion-spinner>
 
             <ion-scroll zooming="true" direction="x">
             <div class="pronos row">
