@@ -266,7 +266,7 @@ angular.module('starter.controllers', [])
   $scope.pause();
 
   $scope.imagesUrl = ConfigConstants.cameraUrl;
-  $scope.title = "Fotos";
+  $scope.title = "Capturas";
   
     Pictures.all().then(function(pics){
 

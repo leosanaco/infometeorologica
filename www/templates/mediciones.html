@@ -13,7 +13,7 @@
         <div class="shadow"></div>
         <i class="icon ion-thermometer"></i>
         <span class="label">Temperatura</span>
-        <span class="value">{{medition.temperature}}<ion-spinner ng-if="!medition.temperature" class="spinner spinner-light spinner-android"></ion-spinner>º</span>
+        <span class="value">{{medition.temperature}}<ion-spinner ng-if="medition.temperature == null" class="spinner spinner-light spinner-android"></ion-spinner>º</span>
         <div class="grafico" ng-class="{activo: measures.temperature.viewChart}">
             <canvas id="line" class="chart chart-line" data="measures.temperature.chartData"
               labels="measures.temperature.chartLabels" options="measures.temperature.options" legend="false" series="series"
@@ -25,7 +25,7 @@
         <div class="shadow"></div>
         <i class="icon ion-waterdrop"></i>
         <span class="label">Humedad</span>
-        <span class="value">{{medition.humidity}}<ion-spinner ng-if="!medition.humidity" class="spinner spinner-light spinner-android"></ion-spinner>%</span>
+        <span class="value">{{medition.humidity}}<ion-spinner ng-if="medition.humidity == null" class="spinner spinner-light spinner-android"></ion-spinner>%</span>
         <div class="grafico" ng-class="{activo: measures.humidity.viewChart}">
             <canvas id="line2" class="chart chart-line" data="measures.humidity.chartData"
               labels="measures.humidity.chartLabels" options="measures.humidity.options" legend="false" series="series"
@@ -37,7 +37,7 @@
         <div class="shadow"></div>
         <i class="icon ion-cube"></i>
         <span class="label">Presión</span>
-        <span class="value">{{medition.bar}}<ion-spinner ng-if="!medition.bar" class="spinner spinner-light spinner-android"></ion-spinner>hPa</span>
+        <span class="value">{{medition.bar}}<ion-spinner ng-if="medition.bar == null" class="spinner spinner-light spinner-android"></ion-spinner>hPa</span>
         <div class="grafico" ng-class="{activo: measures.bar.viewChart}">
             <canvas id="line3" class="chart chart-line" data="measures.bar.chartData"
               labels="measures.bar.chartLabels" options="measures.bar.options" legend="false" series="series"
@@ -49,7 +49,7 @@
         <div class="shadow"></div>
         <i class="icon ion-leaf"></i>
         <span class="label">Vel. Viento</span>
-        <span class="value">{{medition.wind_speed}}<ion-spinner ng-if="!medition.wind_speed" class="spinner spinner-light spinner-android"></ion-spinner>Km/h</span>
+        <span class="value">{{medition.wind_speed}}<ion-spinner ng-if="medition.wind_speed == null" class="spinner spinner-light spinner-android"></ion-spinner>Km/h</span>
         <div class="grafico" ng-class="{activo: measures.wind_speed.viewChart}">
             <canvas id="line3" class="chart chart-line" data="measures.wind_speed.chartData"
               labels="measures.wind_speed.chartLabels" options="measures.wind_speed.options" legend="false" series="series"
@@ -61,7 +61,7 @@
         <div class="shadow"></div>
         <i class="icon ion-arrow-up-a icon-direction-{{medition.wind_direction}}"></i>
         <span class="label">Dir. Viento</span>
-        <span class="value">{{medition.wind_direction}}<ion-spinner ng-if="!medition.wind_direction" class="spinner spinner-light spinner-android"></ion-spinner></span>
+        <span class="value">{{medition.wind_direction}}<ion-spinner ng-if="medition.wind_direction == null" class="spinner spinner-light spinner-android"></ion-spinner></span>
         <div class="grafico" ng-class="{activo: measures.wind_direction.viewChart}">
           <ul ng-repeat="direc in measures.wind_direction.chartData">
             <li  ng-repeat="line in direc track by $index"/>
@@ -75,7 +75,7 @@
         <div class="shadow"></div>
         <i class="icon ion-thermometer"></i>
         <span class="label">Sensación T.</span>
-        <span class="value">{{medition.wind_chill}}<ion-spinner ng-if="!medition.wind_chill" class="spinner spinner-light spinner-android"></ion-spinner>º</span>
+        <span class="value">{{medition.wind_chill}}<ion-spinner ng-if="medition.wind_chill == null" class="spinner spinner-light spinner-android"></ion-spinner>º</span>
         <div class="grafico" ng-class="{activo: measures.wind_chill.viewChart}">
             <canvas id="line3" class="chart chart-line" data="measures.wind_chill.chartData"
               labels="measures.wind_chill.chartLabels" options="measures.wind_chill.options" legend="false" series="series"
@@ -87,7 +87,7 @@
         <div class="shadow"></div>
         <i class="icon ion-record"></i>
         <span class="label">IUV</span>
-        <span class="value">{{medition.uv}}<ion-spinner ng-if="!medition.uv" class="spinner spinner-light spinner-android"></ion-spinner></span>
+        <span class="value">{{medition.uv}}<ion-spinner ng-if="medition.uv == null" class="spinner spinner-light spinner-android"></ion-spinner></span>
         <div class="grafico" ng-class="{activo: measures.uv.viewChart}">
             <canvas id="line3" class="chart chart-line" data="measures.uv.chartData"
               labels="measures.uv.chartLabels" options="measures.uv.options" legend="false" series="series"

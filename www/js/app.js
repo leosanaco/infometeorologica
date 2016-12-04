@@ -16,24 +16,27 @@ angular.module('starter', ['ionic', 'ngCordova','chart.js','starter.controllers'
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleLightContent();
+        StatusBar.styleLightContent();
+        window.StatusBar.overlaysWebView(false);
+        window.StatusBar.styleHex('#FFFFFF');
     }
+
+
+
   });
 })
 
 .constant('ConfigConstants', {
   
-  cameraUrl: 'http://localhost:8100/tiempo',
-  radarUrl: 'http://localhost:8100/radar',
+  /*cameraUrl: 'http://localhost:8100/tiempo',
+  radarUrl: 'http://localhost:8100/radar',*/
   meditionsUrl: 'http://clima.info.unlp.edu.ar/',
   mapsUrl: 'http://mapa.clima.info.unlp.edu.ar/',
-  /*cameraUrl: 'http://camara.clima.info.unlp.edu.ar',
-  radarUrl: 'http://radar.inta.gov.ar/',*/
+  cameraUrl: 'http://camara.clima.info.unlp.edu.ar',
+  radarUrl: 'http://radar.inta.gov.ar/',
   weatherId:"4ca3a2ee6b3f40a139c0c633415009d3",
   cityId:"3432043",
   weatherUrl:"http://api.openweathermap.org/data/2.5/"
-  
-  
   
 })
 
