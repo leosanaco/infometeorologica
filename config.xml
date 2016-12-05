@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.infometeorologica422725" version="0.8.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ar.edu.unlp.info.infometeorologica" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Info Meteorológica</name>
   <description>
-        La aplicación brinda información meteorológica obtenida de la estación meteorológica de la UNLP.
+        La aplicación brinda información meteorológica obtenida de la estación meteorológica de la UNLP y de servicios adicionales.
     </description>
   <author email="leojsa@gmail.com">
       Leonardo Sánchez Acosta
@@ -14,7 +14,7 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
-  <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="SplashScreenDelay" value="2500"/>
   <preference name="ShowSplashScreenSpinner" value="false"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
