@@ -344,16 +344,7 @@ angular.module('starter.controllers', [])
     if(window.cordova){
 
       document.addEventListener("deviceready", function () {
-        $cordovaInAppBrowser.open(ConfigConstants.mapsUrl+'/index.htm', '_blank', options)
-          .then(function(event) {
-            // success
-          })
-          .catch(function(event) {
-            // error
-          });
-
-
-        $cordovaInAppBrowser.close();
+        $cordovaInAppBrowser.open(ConfigConstants.mapsUrl+'/index.htm', '_blank', options);
 
       }, false);
 
