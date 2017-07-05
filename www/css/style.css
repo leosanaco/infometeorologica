@@ -57,6 +57,16 @@ h1{
 	position:relative;
 }
 
+#mediciones .arrow{
+  color: rgba(255,255,255,.7);
+  float:right;
+  margin-left:10px;
+}
+
+#mediciones .arrow .icon{
+  color: rgba(255,255,255,.5);
+}
+
 #mediciones .icon:before{
 	width: 1em;
 	text-align: center;
@@ -78,6 +88,7 @@ h1{
 	float: right;
 	text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 	position: relative;
+  top: 3px;
 }
 
 .estaciones > div{

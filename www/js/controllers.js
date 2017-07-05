@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('MainCtrl',function($scope, $cordovaNetwork) {
+.controller('MainCtrl',function($scope, $cordovaNetwork, ConfigConstants) {
 
   var loadConfig = function(prop,def){
       var val = def;
@@ -51,6 +51,29 @@ angular.module('starter.controllers', [])
     $scope[prop] = elem[prop];
     window.localStorage[prop] = $scope[prop];
     console.log("Cambio de propiedad", prop + " " + $scope[prop]);    
+  }
+
+  $scope.showStations = function(){
+
+    var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'no'
+    };
+
+    if(window.cordova){
+
+      document.addEventListener("deviceready", function () {
+        $cordovaInAppBrowser.open(ConfigConstants.mapsUrl+'/index.htm', '_blank', options);
+
+      }, false);
+
+    } else {
+
+        document.open(ConfigConstants.mapsUrl+'/index.htm', '_blank', options)
+
+    }
+
   }
 
 })
@@ -328,33 +351,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('InformacionCtrl', function($scope) {
-
-})
-
-.controller('EstacionesCtrl', function($scope,ConfigConstants,$cordovaInAppBrowser) {
-
-  $scope.showStations = function(){
-
-    var options = {
-      location: 'yes',
-      clearcache: 'yes',
-      toolbar: 'no'
-    };
-
-    if(window.cordova){
-
-      document.addEventListener("deviceready", function () {
-        $cordovaInAppBrowser.open(ConfigConstants.mapsUrl+'/index.htm', '_blank', options);
-
-      }, false);
-
-    } else {
-
-        document.open(ConfigConstants.mapsUrl+'/index.htm', '_blank', options)
-
-    }
-
-  }
 
 })
 

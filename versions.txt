@@ -1,0 +1,6 @@
+version changes
+
+* cambiada precision en lluvias para que no aparezcan miles de decimales
+* cambiadas gotas de lluvia para que no parezcan lanzas
+* agregado icono bruma
+* agregadas flechas en mediciones

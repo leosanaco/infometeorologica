@@ -13,7 +13,7 @@
         <div class="status" ng-if="ahora">
           <img src="img/iconos/{{ahora.pro.weather[0].icon}}.png"/>
           <span>{{ahora.pro.weather[0].description}}</span>
-          <span class="rain" ng-if="ahora.pro.rain &&  ahora.pro.rain['3h']>0">{{ahora.pro.rain['3h']}}mm</span> 
+          <span class="rain" ng-if="ahora.pro.rain &&  ahora.pro.rain['3h']>0">{{ahora.pro.rain['3h'] | number : 2}}mm</span> 
           <span class="temp">{{ahora.pro.main.temp | number:0}}º</span>
         </div>
         <ion-spinner ng-if="!ahora" class="spinner spinner-android"></ion-spinner>
@@ -34,7 +34,7 @@
                   <img src="img/iconos/{{prono.pro.weather[0].icon}}.png"/>
                   <span>{{prono.pro.weather[0].description}}</span>
                 </div>
-                <span class="rain" ng-if="prono.pro.rain &&  prono.pro.rain['3h']>0">{{prono.pro.rain['3h']}}mm</span> 
+                <span class="rain" ng-if="prono.pro.rain &&  prono.pro.rain['3h']>0">{{prono.pro.rain['3h'] | number : 2}}mm</span> 
                 <span class="temp">{{prono.pro.main.temp | number:0}}º</span>
 
                 
@@ -54,7 +54,7 @@
                   <img src="img/iconos/{{prono.pro.weather[0].icon}}.png"/>
                   <span>{{prono.pro.weather[0].description}}</span>
                 </div>
-                <span class="rain" ng-if="prono.pro.rain &&  prono.pro.rain['3h']>0">{{prono.pro.rain['3h']}}mm</span> 
+                <span class="rain" ng-if="prono.pro.rain &&  prono.pro.rain['3h']>0">{{prono.pro.rain['3h'] | number : 2}}mm</span> 
                 <span class="temp">{{prono.pro.main.temp | number:0}}º</span>
 
                 

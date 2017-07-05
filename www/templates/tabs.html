@@ -44,10 +44,10 @@ navigation history that also transitions its views in and out.
       <ion-nav-view name="capturas"></ion-nav-view>
     </ion-tab>
 
-    <!-- Estaciones -->
-    <ion-tab title="Estaciones" icon-off="ion-android-pin" icon-on="ion-android-pin" href="#/info/estaciones">
+    <!-- Estaciones 
+      <ion-tab title="Estaciones" icon-off="ion-android-pin" icon-on="ion-android-pin" href="#/info/estaciones">
       <ion-nav-view name="estaciones"></ion-nav-view>
-    </ion-tab>
+    </ion-tab> -->
 
     <!-- Información 
     <ion-tab title="Información" icon-off="ion-flag" icon-on="ion-flag" href="#/info/informacion">
@@ -143,26 +143,54 @@ navigation history that also transitions its views in and out.
     </ion-header-bar>
     <ion-content>
       <div class="card">
+        <div class="item item-text-wrap">
+          <h1>Estación Meteorológica</h1>
+          <p>
+        El emplazamiento de la estación meteorológica automática experimental en la Facultad de Informática tiene por objetivo central obtener la información necesaria para medir el rendimiento de la instalación fotovoltáica piloto -paneles solares- que se encuentran en la azotea de la Facultad.
+        </p>
+      </div>
+      <div class="item item-image">
+          <img src="img/estacion.jpg">
+       </div>
       <div class="item item-text-wrap">
-        <h1>Estación Meteorológica</h1>
         <p>
-      El emplazamiento de la estación meteorológica automática experimental en la Facultad de Informática tiene por objetivo central obtener la información necesaria para medir el rendimiento de la instalación fotovoltáica piloto -paneles solares- que se encuentran en la azotea de la Facultad.
-      </p>
-    </div>
-    <div class="item item-image">
-        <img src="img/estacion.jpg">
-     </div>
-    <div class="item item-text-wrap">
-      <p>
-      La estación está localizada a 20 metros del suelo y muestra, además, parámetros meteorológicos que pueden ser usados para otros fines, siempre y cuando se tengan en cuenta las características de la instalación.
-      <br><br>
-      Esta estación meteorológica automática fue construída por la empresa Davis Instruments Corporation y corresponde al modelo Vantage Pro2 Plus. Es inalámbrica y cuenta con sensores de medición de temperatura, humedad, presión barométrica, lluvia, viento, radiación solar y ultavioleta (UV).
-      <br><br>
-      Finalmente, cabe mencionar que los datos que se visualizan en la web son actualizados cada 5 minutos.
-      </p>
-    </div>
+        La estación está localizada a 20 metros del suelo y muestra, además, parámetros meteorológicos que pueden ser usados para otros fines, siempre y cuando se tengan en cuenta las características de la instalación.
+        <br><br>
+        Esta estación meteorológica automática fue construída por la empresa Davis Instruments Corporation y corresponde al modelo Vantage Pro2 Plus. Es inalámbrica y cuenta con sensores de medición de temperatura, humedad, presión barométrica, lluvia, viento, radiación solar y ultavioleta (UV).
+        <br><br>
+        Finalmente, cabe mencionar que los datos que se visualizan en la web son actualizados cada 5 minutos.
+        </p>
+      </div>
     
     </div>
+
+  <div class="card">
+    <div class="item item-text-wrap">
+      <h1>Estaciones locales</h1>
+        <p>
+          A principios de 2014 el Laboratorio de Investigación en Nuevas Tecnologías Informáticas (LINTI) puso en marcha un proyecto para integrar estaciones meteorológicas de la zona.<br><br> 
+          Se trata de un programa que recaba información de las estaciones locales y las georreferencia en un mapa, con el objetivo de centralizar, representar y comparar la información sobre el  clima. 
+        </p>
+
+        <div class="row estaciones">
+        <div class="col col-20"><img src="img/estaciones/1.png" alt="estacion 1"/></div>
+        <div class="col col-20"><img src="img/estaciones/2.png" alt="estacion 2"/></div>
+        <div class="col col-20"><img src="img/estaciones/3.png" alt="estacion 3"/></div>
+        <div class="col col-20"><img src="img/estaciones/4.png" alt="estacion 4"/></div>
+        <div class="col col-20"><img src="img/estaciones/5.png" alt="estacion 5"/></div>
+      </div>
+
+      <button class="button button-block button-positive icon-left ion-android-map" ng-click="showStations()">
+         Ver estaciones
+      </button>
+      <br>
+      <p>
+        Las estaciones que implementen el sistema serán georreferenciadas en un mapa que concentra toda la información, a la cual se puede acceder desde una computadora, tablet, o celular. <br><br>Este sistema permite ver los valores actuales de los parámetros meteorológicos (temperatura, humedad, presión atmosférica, dirección y velocidad del viento) y además genera gráficos de datos históricos en un período de tiempo determinado.
+      </p>
+
+      </div>
+    </div>
+
     </ion-content>
   </ion-side-menu>
 
