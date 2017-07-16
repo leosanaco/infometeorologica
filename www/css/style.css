@@ -114,7 +114,8 @@ h1{
     transform: rotate(180deg);
 }
 
-.icon-direction-O:before{
+.icon-direction-O:before,
+.icon-direction-W:before{
   -ms-transform: rotate(270deg);
     -webkit-transform: rotate(270deg); 
     transform: rotate(270deg);
@@ -131,12 +132,14 @@ h1{
     -webkit-transform: rotate(135deg); 
     transform: rotate(135deg);
 }
-.icon-direction-SO:before{
+.icon-direction-SO:before,
+.icon-direction-SW:before{
   -ms-transform: rotate(225deg);
     -webkit-transform: rotate(225deg); 
     transform: rotate(225deg);
 }
-.icon-direction-NO:before{
+.icon-direction-NO:before,
+.icon-direction-NW:before{
   -ms-transform: rotate(315deg);
     -webkit-transform: rotate(315deg); 
     transform: rotate(315deg);
@@ -153,12 +156,14 @@ h1{
     -webkit-transform: rotate(157.5deg); 
     transform: rotate(157.5deg);
 }
-.icon-direction-SSW:before{
+.icon-direction-SSW:before,
+.icon-direction-SSO:before{
   -ms-transform: rotate(202.5deg);
     -webkit-transform: rotate(202.5deg); 
     transform: rotate(202.5deg);
 }
-.icon-direction-NNW:before{
+.icon-direction-NNW:before,
+.icon-direction-NNO:before{
   -ms-transform: rotate(337.5deg);
     -webkit-transform: rotate(337.5deg); 
     transform: rotate(337.5deg);
@@ -175,12 +180,14 @@ h1{
     -webkit-transform: rotate(112.5deg); 
     transform: rotate(112.5deg);
 }
-.icon-direction-OSW:before{
+.icon-direction-OSW:before,
+.icon-direction-OSO:before{
   -ms-transform: rotate(247.5deg);
     -webkit-transform: rotate(247.5deg); 
     transform: rotate(247.5deg);
 }
-.icon-direction-ONW:before{
+.icon-direction-ONW:before,
+.icon-direction-ONO:before{
   -ms-transform: rotate(292.5deg);
     -webkit-transform: rotate(292.5deg); 
     transform: rotate(292.5deg);
@@ -223,6 +230,12 @@ h1{
 	width: 50%;
 	min-width: 5rem;
 	top: 0;
+}
+
+@media (min-width: 320px) and (max-width: 340px) {
+  #mediciones .unity {
+      font-size: 0.7em;
+  }
 }
 /*
 #temperature .shadow{
